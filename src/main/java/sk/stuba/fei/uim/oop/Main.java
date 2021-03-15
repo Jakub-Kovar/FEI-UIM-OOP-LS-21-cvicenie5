@@ -1,19 +1,15 @@
 package sk.stuba.fei.uim.oop;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.function.Consumer;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<Animal> animals = new ArrayList<>(List.of(new Dog("Rex"), new Dog("Luna"), new Parrot("Polly"), new Dog("Dasenka"), new Bird("Orol")));
+        funcArg((s) -> System.out.println(s));
+        funcArg((s) -> System.out.println(s.toUpperCase()));
+    }
 
-        animals.forEach(animal -> {
-            if (animal.toString().startsWith("L")) {
-                return;
-            }
-            System.out.println(animal.toString());
-        });
+    static void funcArg(Consumer<String> metoda) {
+        metoda.accept("hello world");
     }
 }
