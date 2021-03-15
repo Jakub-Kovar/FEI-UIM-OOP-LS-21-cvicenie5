@@ -7,7 +7,10 @@ public class Main {
 
             try {
                 checkSever(s);
-            } catch (NotSeverException | NotSeverOrJuhException e) {
+            } catch (NotSeverException e) {
+                e.printStackTrace();
+            } catch (NotSeverOrJuhException e) {
+                System.err.println("vychod or zapad");
                 e.printStackTrace();
             }
 
