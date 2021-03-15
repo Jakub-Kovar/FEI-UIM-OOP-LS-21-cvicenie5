@@ -8,7 +8,11 @@ public abstract class Animal {
         this.name = name;
     }
 
-    abstract void makeSound();
+    abstract String getSound();
+
+    void makeSound() {
+        System.out.println(this.getSound());
+    };
 
     @Override
     public String toString() {
