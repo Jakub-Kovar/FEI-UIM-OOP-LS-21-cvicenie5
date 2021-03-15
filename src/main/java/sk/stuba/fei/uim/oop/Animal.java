@@ -1,6 +1,6 @@
 package sk.stuba.fei.uim.oop;
 
-public abstract class Animal implements Comparable<Animal> {
+public abstract class Animal {
 
     private String name;
 
@@ -9,11 +9,6 @@ public abstract class Animal implements Comparable<Animal> {
     }
 
     abstract void makeSound();
-
-    @Override
-    public int compareTo(Animal o) {
-        return this.name.compareTo(o.name);
-    }
 
     @Override
     public String toString() {
