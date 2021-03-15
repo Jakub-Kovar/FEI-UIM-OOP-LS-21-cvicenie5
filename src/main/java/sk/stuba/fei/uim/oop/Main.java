@@ -9,6 +9,9 @@ public class Main {
 
         for (Animal animal : animals) {
             animal.makeSound();
+            if (animal instanceof Bird) {
+                ((Bird) animal).repeat("Hello world");
+            }
         }
     }
 }

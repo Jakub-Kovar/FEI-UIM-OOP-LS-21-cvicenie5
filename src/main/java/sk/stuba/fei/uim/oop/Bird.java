@@ -6,4 +6,8 @@ public class Bird extends Animal {
     void makeSound() {
         System.out.println("Chirp chirp");
     }
+
+    void repeat(String sentence) {
+        System.out.println("Bird says: "+ sentence);
+    }
 }
