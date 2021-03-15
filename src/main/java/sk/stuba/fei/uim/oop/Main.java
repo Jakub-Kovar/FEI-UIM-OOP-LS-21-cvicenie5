@@ -9,9 +9,11 @@ public class Main {
 
         List<Animal> animals = new ArrayList<>(List.of(new Dog("Rex"), new Dog("Luna"), new Parrot("Polly"), new Dog("Dasenka"), new Bird("Orol")));
 
-        animals.sort(Comparator.comparing(Animal::getSound));
-
-        System.out.println(animals.toString());
-        animals.forEach((animal -> System.out.println(animal.getSound())));
+        animals.forEach(animal -> {
+            if (animal.toString().startsWith("L")) {
+                return;
+            }
+            System.out.println(animal.toString());
+        });
     }
 }
