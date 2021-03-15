@@ -7,15 +7,19 @@ public class Main {
 
             try {
                 checkSever(s);
-            } catch (NotSeverException e) {
-                e.printStackTrace();
-            } catch (NotSeverOrJuhException e) {
-                System.err.println("vychod or zapad");
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
 
+        try {
+            checkSever(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("koniec programu");
     }
 
     static void checkSever(SvetoveStrany s) throws NotSeverException, NotSeverOrJuhException {
