@@ -5,11 +5,20 @@ public class Main {
 
         for(var s : SvetoveStrany.values()) {
 
+            System.out.println("pred");
             try {
+                System.out.println("try pred");
                 checkSever(s);
+                System.out.println("try po");
             } catch (NotSeverException e) {
+                System.out.println("catch");
                 e.printStackTrace();
+                throw new IllegalStateException(e);
+            } finally {
+                System.out.println("finally");
             }
+            System.out.println("po");
+
         }
 
     }
