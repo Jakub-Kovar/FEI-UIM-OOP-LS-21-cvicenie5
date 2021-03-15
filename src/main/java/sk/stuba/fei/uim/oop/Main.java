@@ -1,34 +1,15 @@
 package sk.stuba.fei.uim.oop;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
-        for (var s : SvetoveStrany.values()) {
+        List<Animal> animals = new ArrayList<>(List.of(new Dog("Rex"), new Dog("Luna"), new Parrot("Polly"), new Dog("Dasenka"), new Bird("Orol")));
 
-            try {
-                checkSever(s);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        animals.sort(null);
 
-        }
-
-        try {
-            checkSever(null);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("koniec programu");
-    }
-
-    static void checkSever(SvetoveStrany s) throws NotSeverException, NotSeverOrJuhException {
-        if (s.jeSever) {
-            System.out.println("je sever");
-        } else if(s == SvetoveStrany.JUH) {
-            throw new NotSeverException("musi byt sever");
-        } else {
-            throw new NotSeverOrJuhException("nie je sever ani juh");
-        }
+        System.out.println(animals.toString());
     }
 }
