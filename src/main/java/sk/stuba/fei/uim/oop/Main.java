@@ -3,17 +3,22 @@ package sk.stuba.fei.uim.oop;
 public class Main {
     public static void main(String[] args) {
 
-        checkSever(SvetoveStrany.fromString("SEVER"));
-        checkSever(SvetoveStrany.fromString("JUH"));
-        checkSever(SvetoveStrany.fromString("sever"));
+        for(var s : SvetoveStrany.values()) {
+
+            try {
+                checkSever(s);
+            } catch (NotSeverException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
-    static void checkSever(SvetoveStrany s) {
+    static void checkSever(SvetoveStrany s) throws NotSeverException {
         if(s.jeSever) {
             System.out.println("je sever");
         } else {
-            System.out.println("nie je sever");
+            throw new NotSeverException("musi byt sever");
         }
     }
 }
