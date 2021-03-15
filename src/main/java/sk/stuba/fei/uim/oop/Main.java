@@ -8,7 +8,9 @@ public class Main {
 
         List<Animal> animals = new ArrayList<>(List.of(new Dog("Rex"), new Dog("Luna"), new Parrot("Polly"), new Dog("Dasenka"), new Bird("Orol")));
 
-        animals.sort(new AnimalComparator());
+        animals.sort((o1, o2) -> {
+            return o1.toString().compareTo(o2.toString());
+        });
 
         System.out.println(animals.toString());
     }
