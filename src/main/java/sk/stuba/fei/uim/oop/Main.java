@@ -2,17 +2,18 @@ package sk.stuba.fei.uim.oop;
 
 public class Main {
     public static void main(String[] args) {
-        SvetoveStrany strana = SvetoveStrany.SEVER;
 
-        for (SvetoveStrany s : SvetoveStrany.values()) {
-            if (s == SvetoveStrany.SEVER) {
-                System.out.println("rovne");
-            } else {
-                System.out.println("nerovne");
-            }
+        checkSever(SvetoveStrany.valueOf("SEVER"));
+        checkSever(SvetoveStrany.valueOf("JUH"));
+        checkSever(SvetoveStrany.valueOf("sever"));
+
+    }
+
+    static void checkSever(SvetoveStrany s) {
+        if(s == SvetoveStrany.SEVER) {
+            System.out.println("je sever");
+        } else {
+            System.out.println("nie je sever");
         }
-
-
-
     }
 }
